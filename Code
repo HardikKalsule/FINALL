@@ -8,7 +8,9 @@ CHECKSUM_FILE=$(mktemp)
 
 # Find all files in the directory and calculate their MD5 checksums
 find "$DIR_TO_SCAN" -type f -exec md5sum {} + | sort > "$CHECKSUM_FILE"
-
+# Extract duplicate files based on checksums
+# Extract duplicate files based on checksums
+# Extract duplicate files based on checksums
 # Extract duplicate files based on checksums
 awk '{print $1}' "$CHECKSUM_FILE" | uniq -d > duplicates.txt
 
